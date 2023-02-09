@@ -19,7 +19,7 @@ function makeOperations(operationCode) {
   } else if (operationCode === "/") {
     var result = number1 / number2;
   } else {
-    window.alert("operation is not unknow");
+    window.alert("operation is not unknown");
   }
   window.alert(result);
 }
@@ -30,7 +30,8 @@ function onOperationButtonClick(eventObject) {
   makeOperations(operation);
 }
 
-buttonPlus.addEventListener("click", onOperationButtonClick);
-buttonMinus.addEventListener("click", onOperationButtonClick);
-buttonMultiply.addEventListener("click", onOperationButtonClick);
-buttonDevide.addEventListener("click", onOperationButtonClick);
+var operationButtons = [buttonPlus, buttonMinus, buttonMultiply, buttonDevide];
+
+for (var i = 0; i < operationButtons.length; i++) {
+  operationButtons[i].addEventListener("click", onOperationButtonClick);
+}
